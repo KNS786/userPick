@@ -2,15 +2,17 @@ import React from 'react';
 import '../Sign-in-Sign-up.component';
 import './sign-in.styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import {Link} from 'react-router-dom';
 
-export const SignIn=({useremail,password,ChangeEmail,ChangePassword,handleSubmit})=>(
+
+export const SignIn=({useremail,password,ChangeEmail,ChangePassword,LoginError})=>(
   <div className="global-container">
 	<div className="card login-form">
 	<div className="card-body">
 		<h3 className="card-title text-center">Log in to Doolo</h3>
 		<div className="card-text">
 			
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={LoginError}>
 				
 				<div className="form-group">
 					<label htmlFor="exampleInputEmail1">Email address</label>
@@ -35,7 +37,7 @@ export const SignIn=({useremail,password,ChangeEmail,ChangePassword,handleSubmit
            >Sign in</button>
 				
 				<div class="sign-up">
-				
+				    <Link to='/signUp'>I don't have account</Link>
 				</div>
 			</form>
 		</div>

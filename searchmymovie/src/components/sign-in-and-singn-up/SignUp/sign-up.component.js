@@ -2,10 +2,11 @@ import React from 'react';
 import '../Sign-in-Sign-up.component';
 import './sign-up.styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link,Redirect} from 'react-router-dom';
 
 export const signUp=
 ({username,useremail,password,confirmPassword,ChangeUserName,ChangeEmail,ChangePassword,
-  ChangeConfirmPassword,handleSubmit
+  ChangeConfirmPassword,RegistrationError
 })=>(
     
     <div className='global-container'>
@@ -15,8 +16,7 @@ export const signUp=
      <div className='card-text'>
      <form className='usersignUp'
        onSubmit={
-            password===confirmPassword
-            ? handleSubmit:null
+           RegistrationError
           }
       >
          <div className='form-group'>
@@ -60,8 +60,11 @@ export const signUp=
          />
    </div>
 
-    <button type='submit' className='btn btn-primary btn-block'>SignUp</button>     
-    
+    <button type='submit' className='btn btn-primary btn-block' >SignUp
+    </button>     
+      <div className='sign-in'>
+        <Link  to='/signIn'>I have already account</Link>
+      </div>
     </form>
     </div>    
    </div>
