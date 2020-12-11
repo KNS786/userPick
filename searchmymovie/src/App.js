@@ -1,12 +1,17 @@
 import React from 'react';
-import Spinner from './components/spinner/spinner.component';
+
+import {Route} from 'react-router-dom'
+
+import NavBar from './components/NavBar/navbar';
+
 import SignInAndSignUp from './components/sign-in-and-singn-up/Sign-in-Sign-up.component';
 
 function App(){
      return(
       <div className='App'>
-         <Spinner/>
+        <Route exact path='/home' component={NavBar}/>          
            <SignInAndSignUp/>  
+         
       </div>
    )
 }

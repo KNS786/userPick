@@ -2,7 +2,7 @@ import React from 'react';
 import '../Sign-in-Sign-up.component';
 import './sign-up.styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Link,Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export const signUp=
 ({username,useremail,password,confirmPassword,ChangeUserName,ChangeEmail,ChangePassword,
@@ -50,15 +50,6 @@ export const signUp=
      />
   </div>
    
-    <div className='form-group'>
-     <label htmlFor='exampleInputPassword1'>confirm Password</label>
-         <input type='password'
-          name='confirmPassword'
-          onChange={ChangeConfirmPassword}
-          value={confirmPassword}
-         className='form-control form-control-sm' 
-         />
-   </div>
 
     <button type='submit' className='btn btn-primary btn-block' >SignUp
     </button>     

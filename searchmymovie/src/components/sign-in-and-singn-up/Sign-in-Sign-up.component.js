@@ -62,8 +62,7 @@ class SignInAndSignUp extends React.Component{
 
         if(emailPattern.test(Register.useremail)) ErrorRegister['email']='invalid emial address';
        
-         if(Register.password===Register.confirmPassword)
-             ErrorRegister['password']='plase enter correct confirm password';      
+      
         
         if(Object.keys(Register).length<0) 
            console.log(ErrorRegister);
