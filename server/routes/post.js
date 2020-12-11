@@ -35,4 +35,15 @@ router.post('/createpost',logincheck,function(req,res){
       .catch(err=>res.json(err));
 })
 
+//my post 
+router.get('/mypost',logincheck,function(req,res){
+     post.find({postedby:req.user._id})
+     .populate('postedby','_id name')
+     .then(mypost=>{
+       res.json({mypost})
+     })
+     .catch(err=>console.error(err))
+})
+
+
 module.exports=router;
