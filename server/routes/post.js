@@ -6,6 +6,17 @@ const post=require('../models/post.user');
 
 const logincheck=require('../middleware/login.check')
 
+//get all post in a app 
+router.get('/allpost',function(req,res){
+     post.find()
+     .populate("postedby","_id name")
+     .then(postes=>{
+       res.json({postes});
+    }).catch(err=>res.status(400).json({allpost:'allpost cannot get'}))
+})
+
+
+
 router.post('/createpost',logincheck,function(req,res){
       const {title,body}=req.body;
      if(!title || !body)
