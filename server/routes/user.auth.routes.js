@@ -59,7 +59,7 @@ router.post('/signin',function(req,res){
                return res.status(400).json({AuthErr:'password incorrect'}) 
             // return res.json({Auth:'successfully loged in'});          
              const token=jwt.sign({_id:savedUser._id},JWT_SECRET);
-             res.json({token});
+             res.json({token,user:{__id:savedUser._id,email:savedUser.email,name:savedUser.name}})
 
          })
        .catch(err=>console.log(err));

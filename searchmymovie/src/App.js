@@ -1,21 +1,22 @@
 import React from 'react';
 
-import NavBar from './components/NavBar/navbar.component';
-import SignInAndSignUp from './components/sign-in-and-singn-up/Sign-in-Sign-up.component';
+import VideoPlayer from './components/video-component/video.component';
 
-import{Route,Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
-function App(){
-    return(
-      <div className='App'>
-        <SignInAndSignUp/>  
-        <Switch>
-         <Route exact path='/' component={NavBar}/>
-         <Route exact path='/profile' component={NavBar}/> 
-         </Switch>
-      </div>
+import {SignInAndSignUpPage} from './pages/sign-in-and-sign-up/sign-in-and-signup.component';
 
-   )
-
+class App extends React.Component{
+     render(){
+      return(
+            <div className='App'>
+              <SignInAndSignUpPage/>
+             <Route exact path='/home'>
+               <VideoPlayer/>                 
+            </Route>
+           </div>
+        )
+    }
 }
+
 export default App;

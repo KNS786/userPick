@@ -18,8 +18,8 @@ router.get('/allpost',function(req,res){
 
 
 router.post('/createpost',logincheck,function(req,res){
-      const {title,body}=req.body;
-     if(!title || !body)
+      const {title,body,video}=req.body;
+     if(!title || !body || !video)
       return res.status(400).json({createPost:'create post error'})
 
      console.log(req.user);
@@ -28,6 +28,7 @@ router.post('/createpost',logincheck,function(req,res){
       const newpost=new post({
          title,
         body,
+        video,
         postedby:req.user
        })
 
