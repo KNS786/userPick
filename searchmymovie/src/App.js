@@ -1,20 +1,21 @@
 import React from 'react';
 
-import {Route} from 'react-router-dom'
-
-import NavBar from './components/NavBar/navbar';
-
+import NavBar from './components/NavBar/navbar.component';
 import SignInAndSignUp from './components/sign-in-and-singn-up/Sign-in-Sign-up.component';
 
+import{Route,Switch } from 'react-router-dom';
+
 function App(){
-     return(
+    return(
       <div className='App'>
-        <Route exact path='/home' component={NavBar}/>          
-           <SignInAndSignUp/>  
-         
+        <SignInAndSignUp/>  
+        <Switch>
+         <Route exact path='/' component={NavBar}/>
+         <Route exact path='/profile' component={NavBar}/> 
+         </Switch>
       </div>
+
    )
+
 }
-
-
 export default App;

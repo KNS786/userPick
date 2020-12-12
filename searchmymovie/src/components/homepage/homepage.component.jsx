@@ -1,23 +1,27 @@
 import React from 'react';
-import signInandSignUp from '../sign-in-and-singn-up/Sign-in-Sign-up.component';
+import NavBar from '../NavBar/navbar.component';
+import SignInAndSignUp from '../sign-in-and-singn-up/Sign-in-Sign-up.component';
+import Home from '../screens/home/home.component';
+import Profile from '../screens/profile/profile.component';
 
-class homepage extends React.Component{
-     constructor(props){
-        super(props);
-          this.state={
-    
-          }
+import {Link,Route,Switch} from 'react-router-dom';
 
-    }
-   render(){
+
+const  homePage=()=>{
     return(
-       <div className='homepage-container'>
-           <signInandSignUp/>           
+       <div>
+         <Switch>
+           <Route exact path='/'><NavBar/></Route>
+          <SignInAndSignUp/>
+         
+         <Route exact path='/home' component={Home}/>
+          <Route exact path='/profile' component={Profile}/>         
+     </Switch>
       </div>
-     )
 
-   }
+   
+   )
 
 }
 
-export default homepage;
+export default homePage;
